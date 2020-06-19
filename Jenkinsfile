@@ -11,10 +11,10 @@
             agent any
             steps {
               withSonarQubeEnv('sonarserver') {
-                mvn sonar:sonar \
-  -Dsonar.projectKey=teste_dois \
-  -Dsonar.host.url=http://10.200.144.143:9000 \
-  -Dsonar.login=0998ec18481ad4b2eac28bf46ba386b6aef0a8e1
+                sh 'mvn sonar:sonar' +
+                  '-Dsonar.projectKey=teste_dois' +
+                 ' -Dsonar.host.url=http://10.200.144.143:9000' +
+                  '-Dsonar.login=0998ec18481ad4b2eac28bf46ba386b6aef0a8e1'
               }
             }
           }
