@@ -1,8 +1,5 @@
       pipeline {
         agent any
-             tools {
-        maven 'system-maven'
-    }
         stages {
         	stage('Getting code from SCM') {
             steps {
