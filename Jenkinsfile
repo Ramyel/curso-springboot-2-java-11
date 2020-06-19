@@ -1,5 +1,8 @@
       pipeline {
         agent any
+        tools{
+            maven "3.6.0"
+        }
         stages {
         	stage('Getting code from SCM') {
             steps {
@@ -8,7 +11,6 @@
             	}
         	}
           	stage("build & SonarQube analysis") {
-            agent any
             steps {
               withSonarQubeEnv('sonarserver') {
                 sh 'mvn sonar:sonar' +
