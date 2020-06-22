@@ -16,9 +16,9 @@
             steps {
               withSonarQubeEnv('sonarserver') {
                   sh "mvn sonar:sonar \
-                              -Dsonar.projectKey=teste_quatro \
-                              -Dsonar.host.url=http://10.200.144.143:9000 \
-                              -Dsonar.login=0998ec18481ad4b2eac28bf46ba386b6aef0a8e1"
+  -Dsonar.projectKey=teste_quatro \
+  -Dsonar.host.url=http://10.200.144.143:9000 \
+  -Dsonar.login=5081a54fd38ed432540c9ce9b263ce7855f7ec63"
               }
             }
           }
