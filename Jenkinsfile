@@ -11,10 +11,8 @@
           	stage("build & SonarQube analysis") {
             steps {
               withSonarQubeEnv('sonarserver') {
-                sh 'mvn sonar:sonar' +
-                  '-Dsonar.projectKey=teste_dois' +
-                 ' -Dsonar.host.url=http://10.200.144.143:9000' +
-                  '-Dsonar.login=0998ec18481ad4b2eac28bf46ba386b6aef0a8e1'
+               def mvnHome = tool 'maven-3.6.3'
+                    sh "'${mvnHome}/bin/mvn' -f backend/pom.xml clean package sonar:sonar"
               }
             }
           }
