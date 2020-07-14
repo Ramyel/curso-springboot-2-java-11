@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class CursoApplicationTests {
 
 	@Test
-	void contextLoads(true) {
+	void contextLoads() {
+		ab
 	}
 
 }
