@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build & Sonar Analysis') {
       steps {
-        withSonarQubeEnv(installationName: 'sonarserver', credentialsId: '5081a54fd38ed432540c9ce9b263ce7855f7ec63') {
+        withSonarQubeEnv(installationName: 'sonarserver', credentialsId: '259cfd4b04c7ed66ad593a303c2c2a7600d1341c') {
           sh '''"mvn clean package sonar:sonar \\
                     -DskipTests \\
                     -Dsonar.projectKey=teste_tres \\
@@ -23,7 +23,7 @@ pipeline {
 
     stage('Quality Gate') {
       steps {
-        waitForQualityGate(credentialsId: 'teste_quatro', webhookSecretId: '5081a54fd38ed432540c9ce9b263ce7855f7ec63', abortPipeline: true)
+        waitForQualityGate(credentialsId: 'teste_tres', webhookSecretId: '259cfd4b04c7ed66ad593a303c2c2a7600d1341c', abortPipeline: true)
       }
     }
 
