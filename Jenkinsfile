@@ -28,4 +28,7 @@ pipeline {
     }
 
   }
+  environment {
+    Maven = 'Maven'
+  }
 }
