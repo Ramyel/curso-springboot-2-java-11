@@ -10,10 +10,10 @@ pipeline {
     stage('Build & Sonar Analysis') {
       steps {
         withSonarQubeEnv(envOnly: true, installationName: 'sonarserver', credentialsId: '5081a54fd38ed432540c9ce9b263ce7855f7ec63') {
-          sh '''mvn sonar:sonar \\
+          sh '''"mvn sonar:sonar \\
   -Dsonar.projectKey=teste_quatro \\
   -Dsonar.host.url=http://10.200.144.143:9000 \\
-  -Dsonar.login=5081a54fd38ed432540c9ce9b263ce7855f7ec63
+  -Dsonar.login=5081a54fd38ed432540c9ce9b263ce7855f7ec63"
 '''
         }
 
