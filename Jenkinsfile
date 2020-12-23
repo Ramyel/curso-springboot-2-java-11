@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build / Sonar Analysis') {
       steps {
-        withSonarQubeEnv(installationName: 'sonarserver', credentialsId: '259cfd4b04c7ed66ad593a303c2c2a7600d1341c') {
+        withSonarQubeEnv('sonarserver') {
           sh '''mvn clean package sonar:sonar \\
                     -DskipTests \\
                     -Dsonar.projectKey=teste_tres \\
