@@ -2,19 +2,9 @@ pipeline {
   agent any
   stages {
     stage('Getting code from Github') {
-      parallel {
-        stage('Getting code from Github') {
-          steps {
-            git(url: 'https://github.com/Ramyel/curso-springboot-2-java-11.git', branch: 'master')
-          }
-        }
-
-        stage('') {
-          steps {
-            tool 'Maven'
-          }
-        }
-
+      steps {
+        tool 'Maven'
+        git(url: 'https://github.com/Ramyel/curso-springboot-2-java-11.git', branch: 'master')
       }
     }
 
