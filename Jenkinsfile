@@ -28,7 +28,7 @@ pipeline {
 
     stage('Sonar results') {
       steps {
-        waitForQualityGate(credentialsId: 'teste_tres', webhookSecretId: '259cfd4b04c7ed66ad593a303c2c2a7600d1341c', abortPipeline: true)
+        waitForQualityGate true
       }
     }
 
